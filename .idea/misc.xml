@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Ervin/AndroidStudioProjects/Mobile-Programming-2022-Sportify/app/src/main/res/drawable-v24/logo_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/Ervin/AndroidStudioProjects/Mobile-Programming-2022-Sportify/app/src/main/res/drawable/btn_bg.xml" value="0.119" />
+        <entry key="..\:/Users/Ervin/AndroidStudioProjects/Mobile-Programming-2022-Sportify/app/src/main/res/drawable/input_bg.xml" value="0.128" />
+        <entry key="..\:/Users/Ervin/AndroidStudioProjects/Mobile-Programming-2022-Sportify/app/src/main/res/font/font.xml" value="0.17962962962962964" />
+        <entry key="..\:/Users/Ervin/AndroidStudioProjects/Mobile-Programming-2022-Sportify/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Ervin/AndroidStudioProjects/Mobile-Programming-2022-Sportify/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Users/Ervin/AndroidStudioProjects/Sportify/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/harun/Desktop/mobilno/Mobile-Programming-2022-Sportify/app/src/main/res/layout/activity_display_message.xml" value="0.25" />
         <entry key="..\:/Users/harun/Desktop/mobilno/Mobile-Programming-2022-Sportify/app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
@@ -14,5 +20,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>
