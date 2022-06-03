@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/andika_new_basic</item>
+        <item>@font/audiowide</item>
+        <item>@font/baloo_chettan</item>
+        <item>@font/mclaren</item>
+        <item>@font/syncopate</item>
+    </array>
+</resources>
