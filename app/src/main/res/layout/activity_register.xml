@@ -144,6 +144,7 @@
         android:background="@drawable/btn_bg"
         android:backgroundTint="@color/white"
         android:fontFamily="serif"
+        android:onClick="onRegister"
         android:text="Register"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#2196F3"

@@ -10,30 +10,16 @@ import androidx.room.PrimaryKey;
 public class Users {
     @PrimaryKey(autoGenerate = true)
     private long id;
-    private String username;
-    private String password;
-    private String name;
-    private String surname;
-    private String email;
-
-
-    public Users(String username, String password, String name, String surname, String email) {
-        this.username = username;
-        this.password = password;
-        this.name = name;
-        this.surname= surname;
-        this.email = email;
-    }
-
-    @Ignore
-    public Users(long id, String username, String password, String name, String surname, String email) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-    }
+    @ColumnInfo (name="name")
+    String name;
+    @ColumnInfo (name="surname")
+    String surname;
+    @ColumnInfo (name="username")
+    String username;
+    @ColumnInfo (name="password")
+    String password;
+    @ColumnInfo (name="email")
+    String email;
 
     public long getId() {
         return id;
