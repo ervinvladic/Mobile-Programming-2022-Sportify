@@ -18,6 +18,8 @@ public interface SportifyDao {
 
     @Query("SELECT * FROM users WHERE id = :id LIMIT 1")
     Users getUserById(long id);
+    @Query("SELECT * FROM users WHERE username = :username LIMIT 1")
+    Users loginUser(String username);
 
     @Update
     void updateUser(Users user);

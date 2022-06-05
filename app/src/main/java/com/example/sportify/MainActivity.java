@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_register);
+            setContentView(R.layout.activity_main);
             nameInput = findViewById(R.id.name_input);
             surnameInput = findViewById(R.id.surname_input);
             usernameInput = findViewById(R.id.username_input);
@@ -46,14 +46,17 @@ public class MainActivity extends AppCompatActivity {
                                     @Override
                                     public void run() {
                                         Toast.makeText(getApplicationContext(), "User registered!", Toast.LENGTH_SHORT).show();
+                                        openhomeactivity();
                                     }
                                 });
 
                             }
                         }).start();
+
                     } else {
                         Toast.makeText(getApplicationContext(), "Fill all fields!", Toast.LENGTH_SHORT).show();
                     }
+
                 }
 
 
@@ -67,4 +70,12 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         }
+    public void onhaveaccount(View view){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+    public void openhomeactivity(){
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
     }
