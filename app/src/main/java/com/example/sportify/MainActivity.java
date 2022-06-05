@@ -1,5 +1,6 @@
 package com.example.sportify;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+            getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+            getSupportActionBar().setCustomView(R.layout.action_bar_layout_register);
             nameInput = findViewById(R.id.name_input);
             surnameInput = findViewById(R.id.surname_input);
             usernameInput = findViewById(R.id.username_input);
