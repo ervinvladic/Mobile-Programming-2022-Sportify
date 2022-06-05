@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     public void login(View view){
         try {
-            Users user = SportifyDatabase.getInstance(this).sportifyDao().loginUser(Username.getText().toString());
+            Users user = SportifyDatabase.getInstance(this).userDao().loginUser(Username.getText().toString());
             if(user.getPassword().equals(Password.getText().toString())){
                 Intent intent = new Intent(this, HomeActivity.class);
                 intent.putExtra("user", Username.getText().toString());

@@ -37,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
                     user.setEmail(emailInput.getText().toString());
                     if (validateInput(user)) {
                         SportifyDatabase sportifyDatabase = SportifyDatabase.getInstance(getApplicationContext());
-                        SportifyDao sportifyDao = sportifyDatabase.sportifyDao();
+                        UserDao userDao = sportifyDatabase.userDao();
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                sportifyDao.add(user);
+                                userDao.addUser(user);
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {

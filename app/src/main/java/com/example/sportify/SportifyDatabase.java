@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 
 @Database(entities = {Users.class},version = 1,exportSchema = false)
 public abstract class SportifyDatabase extends RoomDatabase {
-    public abstract SportifyDao sportifyDao();
+    public abstract UserDao userDao();
     private static SportifyDatabase INSTANCE;
 
     public static SportifyDatabase getInstance(Context context){
