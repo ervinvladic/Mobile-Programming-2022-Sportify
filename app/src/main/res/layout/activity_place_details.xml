@@ -35,15 +35,15 @@
 
     <TextView
         android:id="@+id/place_title"
-        android:fontFamily="@font/sanfrancisco"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:fontFamily="@font/sanfrancisco"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/place_image" />
@@ -61,37 +61,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/place_title" />
 
-    <EditText
+    <TextView
         android:id="@+id/date_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="  Date"
+        android:layout_marginTop="120dp"
         android:drawableLeft="@drawable/ic_calendar"
+        android:ems="10"
         android:inputType="date"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/place_price" />
+        android:minHeight="0dp"
+        android:textAlignment="center"
 
-    <EditText
+        app:autoSizeTextType="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/place_image" />
+
+    <TextView
         android:id="@+id/time_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:drawableLeft="@drawable/ic_time"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
+        android:elegantTextHeight="false"
         android:ems="10"
-        android:hint="  Time"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/date_input"
-        app:layout_constraintStart_toStartOf="@+id/date_input"
+        android:inputType="time"
+        android:minHeight="0dp"
+        android:textAlignment="center"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/date_input" />
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

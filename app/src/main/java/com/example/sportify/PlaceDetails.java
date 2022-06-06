@@ -3,8 +3,10 @@ package com.example.sportify;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -15,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import java.util.Calendar;
 
@@ -24,8 +27,9 @@ public class PlaceDetails extends AppCompatActivity {
     private TextView description;
     private TextView price;
     private TextView court;
-    private EditText date;
-    private EditText time;
+    private TextView date;
+    private TextView time;
+    int hour1,minute1;
     DatePickerDialog.OnDateSetListener setListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,27 @@ public class PlaceDetails extends AppCompatActivity {
         court = findViewById(R.id.place_title);
         date=findViewById(R.id.date_input);
         time=findViewById(R.id.time_input);
+
+        time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TimePickerDialog timePickerDialog = new TimePickerDialog(PlaceDetails.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hour, int minute) {
+                        hour1 = hour;
+                        minute1 = minute;
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.set(0,0,0,hour1,minute1);
+                        time.setText(DateFormat.format( "hh:mm aa",calendar));
+
+                    }
+                },12,0,false
+                );
+                timePickerDialog.updateTime(hour1,minute1);
+                timePickerDialog.show();
+            }
+        });
+
 
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
@@ -57,6 +82,7 @@ public class PlaceDetails extends AppCompatActivity {
                 },year,month,day);
                 datePickerDialog.show();
             }
+
         });
 
         Bundle extras = getIntent().getExtras();
