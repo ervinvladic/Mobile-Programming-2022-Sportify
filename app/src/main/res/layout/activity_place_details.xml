@@ -71,9 +71,7 @@
         android:hint="Date"
         android:inputType="date"
         android:minHeight="0dp"
-
         android:textAlignment="center"
-        app:autoSizeTextType="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,7 +89,7 @@
         android:inputType="date"
         android:minHeight="0dp"
         android:textAlignment="center"
-        android:textIsSelectable="true"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/date_input" />
