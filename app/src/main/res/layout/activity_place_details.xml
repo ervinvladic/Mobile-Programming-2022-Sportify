@@ -88,7 +88,7 @@
         android:elegantTextHeight="false"
         android:ems="10"
         android:hint="Time"
-        android:inputType="time"
+        android:inputType="date"
         android:minHeight="0dp"
         android:textAlignment="center"
         android:textIsSelectable="true"
