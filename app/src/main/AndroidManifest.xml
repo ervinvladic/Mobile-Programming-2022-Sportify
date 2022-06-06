@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sportify">
         <activity
+            android:name=".PlaceDetails"
+            android:exported="false"
+            android:parentActivityName=".HomeActivity"/>
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity

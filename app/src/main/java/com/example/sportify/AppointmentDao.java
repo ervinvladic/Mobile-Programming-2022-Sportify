@@ -20,6 +20,9 @@ public interface AppointmentDao {
     @Query("SELECT * FROM appointment WHERE id = :id LIMIT 1")
     Appointment getAppointmentById(long id);
 
+    @Query("SELECT * FROM appointment JOIN users ON appointment.userId=users.id WHERE users.username=:username")
+    List<Appointment> getAllByUsername(String username);
+
 
     @Update
     void updateAppointment(Appointment appointment);

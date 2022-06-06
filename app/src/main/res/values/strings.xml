@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Sportify</string>
+    <string name="bentbasa">Bentbaša fields</string>
+    <string name="vistafon">Vistafon fields</string>
+    <string name="una">Tennis courts Una</string>
+    <string name="welcome">Welcome to Sportify!</string>
+    <string name="haveAcc">Have an account? <u>Login</u></string>
+    <string name="click">Open for more information</string>
+
 </resources>
