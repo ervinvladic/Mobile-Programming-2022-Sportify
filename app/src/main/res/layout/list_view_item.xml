@@ -23,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
+        android:gravity="center"
 
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -32,6 +33,7 @@
 
     <TextView
         android:id="@+id/item_description"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
@@ -40,19 +42,17 @@
         app:layout_constraintBottom_toBottomOf="@+id/item_image"
         app:layout_constraintStart_toStartOf="@+id/item_image" />
 
-    <TextView
-        android:id="@+id/item_click"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/click"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="italic"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="88dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="114dp"
+        android:layout_marginBottom="114dp"
+        app:layout_constraintBottom_toBottomOf="@+id/item_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/item_image" />
+        app:layout_constraintTop_toTopOf="@+id/item_image"
+        app:srcCompat="@android:drawable/ic_menu_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
