@@ -11,11 +11,13 @@
         android:theme="@style/Theme.Sportify">
         <activity
             android:name=".ProfileActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".HomeActivity"/>
         <activity
             android:name=".PlaceDetails"
             android:exported="false"
-            android:parentActivityName=".HomeActivity" />
+            android:parentActivityName=".HomeActivity"
+            />
         <activity
             android:name=".HomeActivity"
             android:exported="false" />

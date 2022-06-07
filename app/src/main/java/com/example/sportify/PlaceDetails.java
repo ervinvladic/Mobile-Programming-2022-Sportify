@@ -3,16 +3,24 @@ package com.example.sportify;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -29,7 +37,9 @@ public class PlaceDetails extends AppCompatActivity {
     private TextView court;
     private TextView date;
     private TextView time;
+    private Button resButton;
     int hour1,minute1;
+    private static final String CHANNEL_ID ="channel" ;
     DatePickerDialog.OnDateSetListener setListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +53,42 @@ public class PlaceDetails extends AppCompatActivity {
         court = findViewById(R.id.place_title);
         date=findViewById(R.id.date_input);
         time=findViewById(R.id.time_input);
+        resButton=findViewById(R.id.button2);
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+            NotificationChannel channel= new NotificationChannel(CHANNEL_ID,"notification", NotificationManager.IMPORTANCE_HIGH);
+            NotificationManager manager=getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+        resButton.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PlaceDetails.this, HomeActivity.class);
+                TaskStackBuilder stackBuilder = TaskStackBuilder.create(PlaceDetails.this);
+                stackBuilder.addNextIntentWithParentStack(intent);
+                PendingIntent pendingIntent = stackBuilder.getPendingIntent(0,
+                                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(PlaceDetails.this,CHANNEL_ID)
+                        .setSmallIcon(R.drawable.logocourt)
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                        .setContentIntent(pendingIntent)
+                        .setAutoCancel(true);
+                if(date.getText().toString().isEmpty() || time.getText().toString().isEmpty()){
+                    builder.setContentTitle("Reservation failed!");
+                    builder.setContentText("Your court reservation was not completed. Please select valid date and time and try again!");
+                }else{
+                    builder.setContentTitle("Reservation successful!");
+                    builder.setContentText("Your court reservation was successful. Enjoy your game!");
+                }
+                NotificationManagerCompat managerCompat=NotificationManagerCompat.from(PlaceDetails.this);
+                managerCompat.notify(0,builder.build());
+                startActivity(intent);
+
+
+            }
+        });
 
         time.setOnClickListener(new View.OnClickListener() {
             @Override
