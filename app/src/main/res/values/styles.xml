@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="TimePicker" parent="Theme.AppCompat.Light.Dialog">
+    <style name="DatePicker" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <!-- just override the colors used in the default style -->
         <item name="colorAccent">@android:color/holo_purple</item>
+        <item name="colorAccent">@color/logo_background</item>
     </style>
 
-    <style name="DatePicker" parent="Theme.AppCompat.Light.Dialog">
-        <item name="colorAccent">@android:color/holo_purple</item>
+    <style name="TimePicker" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+    <!-- just override the colors used in the default style -->
+    <item name="colorAccent">@android:color/holo_purple</item>
+    <item name="colorAccent">@color/logo_background</item>
     </style>
 </resources>
