@@ -31,12 +31,10 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".ProfileActivity"
-            android:exported="false"
-            android:parentActivityName=".HomeActivity" />
+            android:exported="false" />
         <activity
             android:name=".PlaceDetails"
-            android:exported="false"
-            android:parentActivityName=".HomeActivity" />
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="false" />

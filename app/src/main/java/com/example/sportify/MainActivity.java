@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
         private EditText nameInput, surnameInput, usernameInput, passwordInput, emailInput;
         private Button registerButton;
-        public static final String EXTRA_TODO_ID = "MainActivity/EXTRA_TODO_ID";
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                         }).start();
 
                     } else {
+
                         Toast.makeText(getApplicationContext(), "Fill all fields!", Toast.LENGTH_SHORT).show();
                     }
 
@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void openhomeactivity(){
         Intent intent = new Intent(this, HomeActivity.class);
+        intent.putExtra("user", usernameInput.getText().toString());
         startActivity(intent);
     }
     }

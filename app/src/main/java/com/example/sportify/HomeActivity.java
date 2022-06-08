@@ -20,6 +20,7 @@ public class HomeActivity extends AppCompatActivity {
     public static final String EXTRA_DESCRIPTION = "EXTRA_DESCRIPTION";
     public static final String EXTRA_PRICE = "EXTRA_PRICE";
     private ListView listView;
+    String str;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         PlacesAdapter placesAdapter = new PlacesAdapter(getPlaces(),this);
         listView.setAdapter(placesAdapter);
         listView.setOnItemClickListener(onItemClickListener);
+        str = getIntent().getStringExtra("user");
     }
 
     private AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
@@ -41,6 +43,7 @@ public class HomeActivity extends AppCompatActivity {
             intent.putExtra(EXTRA_TITLE, place.getTitle());
             intent.putExtra(EXTRA_DESCRIPTION, place.getDescription());
             intent.putExtra(EXTRA_PRICE, place.getPrice());
+            intent.putExtra("user",str);
             startActivity(intent);
         }
     };
@@ -59,6 +62,7 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void onprofile(View view){
         Intent intent = new Intent(this, ProfileActivity.class);
+        intent.putExtra("user",str);
         startActivity(intent);
     }
 
