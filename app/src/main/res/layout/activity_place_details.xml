@@ -121,6 +121,7 @@
         android:layout_width="147dp"
         android:layout_height="51dp"
         android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
         android:text="reserve"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
