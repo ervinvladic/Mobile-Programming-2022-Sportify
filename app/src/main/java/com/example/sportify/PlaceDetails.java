@@ -38,6 +38,7 @@ public class PlaceDetails extends AppCompatActivity {
     private TextView date;
     private TextView time;
     private Button resButton;
+    private TextView location;
     int hour1,minute1;
     private static final String CHANNEL_ID ="channel" ;
     DatePickerDialog.OnDateSetListener setListener;
@@ -54,6 +55,7 @@ public class PlaceDetails extends AppCompatActivity {
         date=findViewById(R.id.date_input);
         time=findViewById(R.id.time_input);
         resButton=findViewById(R.id.button2);
+        location = findViewById(R.id.see_location);
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
             NotificationChannel channel= new NotificationChannel(CHANNEL_ID,"notification", NotificationManager.IMPORTANCE_HIGH);
             NotificationManager manager=getSystemService(NotificationManager.class);
@@ -129,6 +131,14 @@ public class PlaceDetails extends AppCompatActivity {
                 datePickerDialog.show();
             }
 
+        });
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(),MapsActivity.class);
+                startActivity(intent);
+            }
         });
 
         Bundle extras = getIntent().getExtras();

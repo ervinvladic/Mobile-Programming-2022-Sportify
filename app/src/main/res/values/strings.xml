@@ -6,5 +6,7 @@
     <string name="welcome">Welcome to Sportify!</string>
     <string name="haveAcc">Have an account? <u>Login</u></string>
     <string name="click">Open for more information</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
 
 </resources>
