@@ -72,6 +72,7 @@ public class PlaceDetails extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PlaceDetails.this, HomeActivity.class);
+                intent.putExtra("user",str);
                 TaskStackBuilder stackBuilder = TaskStackBuilder.create(PlaceDetails.this);
                 stackBuilder.addNextIntentWithParentStack(intent);
                 PendingIntent pendingIntent = stackBuilder.getPendingIntent(0,
@@ -91,7 +92,7 @@ public class PlaceDetails extends AppCompatActivity {
                 }
                 NotificationManagerCompat managerCompat=NotificationManagerCompat.from(PlaceDetails.this);
                 managerCompat.notify(0,builder.build());
-                intent.putExtra("user",str);
+
                 startActivity(intent);
 
 
