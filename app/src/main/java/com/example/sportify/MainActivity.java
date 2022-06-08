@@ -37,28 +37,20 @@ public class MainActivity extends AppCompatActivity {
                     user.setUsername(usernameInput.getText().toString());
                     user.setPassword(passwordInput.getText().toString());
                     user.setEmail(emailInput.getText().toString());
+                    try{
                     if (validateInput(user)) {
                         SportifyDatabase sportifyDatabase = SportifyDatabase.getInstance(getApplicationContext());
                         UserDao userDao = sportifyDatabase.userDao();
-                        new Thread(new Runnable() {
-                            @Override
-                            public void run() {
-                                userDao.addUser(user);
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        Toast.makeText(getApplicationContext(), "User registered!", Toast.LENGTH_SHORT).show();
-                                        openhomeactivity();
-                                    }
-                                });
+                        userDao.addUser(user);
 
-                            }
-                        }).start();
-
+                        Toast.makeText(getApplicationContext(), "User registered!", Toast.LENGTH_SHORT).show();
+                        openhomeactivity();
                     } else {
-
                         Toast.makeText(getApplicationContext(), "Fill all fields!", Toast.LENGTH_SHORT).show();
                     }
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "Username is already in use!", Toast.LENGTH_LONG).show();
+                }
 
                 }
 

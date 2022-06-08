@@ -3,10 +3,11 @@ package com.example.sportify;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
+import androidx.room.Index;
 import androidx.room.Insert;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "users")
+@Entity(tableName = "users", indices = {@Index(value={"username"},unique = true)})
 public class Users {
     @PrimaryKey(autoGenerate = true)
     private long id;
