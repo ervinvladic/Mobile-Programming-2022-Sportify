@@ -39,6 +39,8 @@ public class PlaceDetails extends AppCompatActivity {
     private TextView time;
     private Button resButton;
     private TextView location;
+    private String name;
+    private String str;
     int hour1,minute1;
     private static final String CHANNEL_ID ="channel" ;
     DatePickerDialog.OnDateSetListener setListener;
@@ -56,6 +58,9 @@ public class PlaceDetails extends AppCompatActivity {
         time=findViewById(R.id.time_input);
         resButton=findViewById(R.id.button2);
         location = findViewById(R.id.see_location);
+        Bundle extras = getIntent().getExtras();
+        name=extras.getString(HomeActivity.EXTRA_TITLE);
+        str=extras.getString("user");
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
             NotificationChannel channel= new NotificationChannel(CHANNEL_ID,"notification", NotificationManager.IMPORTANCE_HIGH);
             NotificationManager manager=getSystemService(NotificationManager.class);
@@ -81,11 +86,12 @@ public class PlaceDetails extends AppCompatActivity {
                     builder.setContentTitle("Reservation failed!");
                     builder.setContentText("Your court reservation was not completed. Please select valid date and time and try again!");
                 }else{
-                    builder.setContentTitle("Reservation successful!");
+                    builder.setContentTitle(name);
                     builder.setContentText("Your court reservation was successful. Enjoy your game!");
                 }
                 NotificationManagerCompat managerCompat=NotificationManagerCompat.from(PlaceDetails.this);
                 managerCompat.notify(0,builder.build());
+                intent.putExtra("user",str);
                 startActivity(intent);
 
 
@@ -141,7 +147,7 @@ public class PlaceDetails extends AppCompatActivity {
             }
         });
 
-        Bundle extras = getIntent().getExtras();
+
         if(extras != null){
             setTitle(extras.getString(HomeActivity.EXTRA_TITLE));
             imageView.setImageResource(extras.getInt(HomeActivity.EXTRA_IMAGE));

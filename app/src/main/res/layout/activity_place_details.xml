@@ -65,7 +65,7 @@
         android:id="@+id/date_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="32dp"
         android:drawableLeft="@drawable/ic_calendar"
         android:ems="10"
         android:hint="Date"
@@ -75,54 +75,56 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/place_image"
+        app:layout_constraintTop_toBottomOf="@+id/place_price"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/time_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="24dp"
         android:drawableLeft="@drawable/ic_time"
         android:elegantTextHeight="false"
         android:ems="10"
-        android:hint="Time"
 
+        android:hint="Time"
         android:inputType="date"
         android:minHeight="0dp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/date_input"
+        app:layout_constraintTop_toBottomOf="@+id/date_input"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/see_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="24dp"
         android:drawableLeft="@drawable/ic_location"
         android:elegantTextHeight="false"
         android:ems="10"
-        android:hint="Location"
 
+        android:hint="See Location"
         android:inputType=""
         android:minHeight="0dp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/time_input"
+        app:layout_constraintTop_toBottomOf="@+id/time_input"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="147dp"
         android:layout_height="51dp"
+        android:layout_marginTop="32dp"
         android:text="reserve"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/see_location"
-        app:layout_constraintVertical_bias="0.083" />
+        app:layout_constraintVertical_bias="0.238" />
 </androidx.constraintlayout.widget.ConstraintLayout>
