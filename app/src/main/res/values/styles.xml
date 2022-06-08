@@ -3,13 +3,15 @@
 
     <style name="DatePicker" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
         <!-- just override the colors used in the default style -->
+        <item name="colorPrimary">@android:color/holo_purple</item>
+        <item name="colorPrimaryDark">@android:color/holo_purple</item>
         <item name="colorAccent">@android:color/holo_purple</item>
-        <item name="colorAccent">@color/logo_background</item>
     </style>
 
     <style name="TimePicker" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
     <!-- just override the colors used in the default style -->
-    <item name="colorAccent">@android:color/holo_purple</item>
-    <item name="colorAccent">@color/logo_background</item>
+        <item name="colorPrimary">@android:color/holo_purple</item>
+        <item name="colorPrimaryDark">@android:color/holo_purple</item>
+        <item name="colorAccent">@android:color/holo_purple</item>
     </style>
 </resources>
