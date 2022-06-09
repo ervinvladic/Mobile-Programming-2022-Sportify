@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,8 +40,11 @@ public class MainActivity extends AppCompatActivity {
                     user.setEmail(emailInput.getText().toString());
                     try{
                     if (validateInput(user)) {
-                        if(passwordInput.getText().toString().trim().length()<6){
+                        if(passwordInput.getText().toString().trim().length()<6) {
                             Toast.makeText(getApplicationContext(), "Password needs to have at least 6 characters!", Toast.LENGTH_SHORT).show();
+                        } else if(!Patterns.EMAIL_ADDRESS.matcher(emailInput.getText().toString()).matches()){
+                            Toast.makeText(getApplicationContext(), "Enter valid Email address !", Toast.LENGTH_SHORT).show();
+
                         }else{
                             SportifyDatabase sportifyDatabase = SportifyDatabase.getInstance(getApplicationContext());
                             UserDao userDao = sportifyDatabase.userDao();
