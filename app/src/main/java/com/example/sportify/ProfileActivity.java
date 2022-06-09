@@ -47,17 +47,21 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
     public void onSave(View view){
-        user.setName(name.getText().toString());
-        user.setSurname(surname.getText().toString());
-        user.setUsername(username.getText().toString());
-        user.setPassword(password.getText().toString());
-        user.setEmail(email.getText().toString());
-        SportifyDatabase.getInstance(this).userDao().updateUser(user);
+        try {
+            user.setName(name.getText().toString());
+            user.setSurname(surname.getText().toString());
+            user.setUsername(username.getText().toString());
+            user.setPassword(password.getText().toString());
+            user.setEmail(email.getText().toString());
+            SportifyDatabase.getInstance(this).userDao().updateUser(user);
 
-        Toast.makeText(this, "User information updated!", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, HomeActivity.class);
-        intent.putExtra("user",username.getText().toString());
-        startActivity(intent);
+            Toast.makeText(this, "User information updated!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, HomeActivity.class);
+            intent.putExtra("user", username.getText().toString());
+            startActivity(intent);
+        }catch(Exception e){
+            Toast.makeText(getApplicationContext(), "Username is already in use!", Toast.LENGTH_LONG).show();
+        }
 
     }
     public void onCancel(View view){
