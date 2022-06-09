@@ -39,12 +39,16 @@ public class MainActivity extends AppCompatActivity {
                     user.setEmail(emailInput.getText().toString());
                     try{
                     if (validateInput(user)) {
-                        SportifyDatabase sportifyDatabase = SportifyDatabase.getInstance(getApplicationContext());
-                        UserDao userDao = sportifyDatabase.userDao();
-                        userDao.addUser(user);
+                        if(passwordInput.getText().toString().trim().length()<6){
+                            Toast.makeText(getApplicationContext(), "Password needs to have at least 6 characters!", Toast.LENGTH_SHORT).show();
+                        }else{
+                            SportifyDatabase sportifyDatabase = SportifyDatabase.getInstance(getApplicationContext());
+                            UserDao userDao = sportifyDatabase.userDao();
+                            userDao.addUser(user);
 
-                        Toast.makeText(getApplicationContext(), "User registered!", Toast.LENGTH_SHORT).show();
-                        openhomeactivity();
+                            Toast.makeText(getApplicationContext(), "User registered!", Toast.LENGTH_SHORT).show();
+                            openhomeactivity();
+                        }
                     } else {
                         Toast.makeText(getApplicationContext(), "Fill all fields!", Toast.LENGTH_SHORT).show();
                     }

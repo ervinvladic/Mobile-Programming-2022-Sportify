@@ -70,7 +70,6 @@
         android:layout_marginTop="48dp"
         android:onClick="onregister"
         android:text="register"
-        android:fontFamily="serif"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_login" />
 
@@ -80,7 +79,6 @@
         android:layout_height="wrap_content"
         android:onClick="login"
         android:text="LOGIN"
-        android:fontFamily="serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.92"
         app:layout_constraintStart_toEndOf="@+id/register_button_login"

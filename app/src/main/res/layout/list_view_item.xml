@@ -8,9 +8,7 @@
     <ImageView
         android:id="@+id/item_image"
         android:layout_width="match_parent"
-        android:layout_height="275dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
+        android:layout_height="0dp"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,10 +20,10 @@
         android:id="@+id/item_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@color/purple_700"
         android:gravity="center"
 
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/item_description"
@@ -33,11 +31,11 @@
 
     <TextView
         android:id="@+id/item_description"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:background="@color/white"
+        android:background="@color/purple_700"
+        android:gravity="center"
+        android:textColor="@color/white"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/item_image"
         app:layout_constraintStart_toStartOf="@+id/item_image" />

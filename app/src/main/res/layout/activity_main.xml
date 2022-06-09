@@ -143,7 +143,6 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/btn_bg"
         android:backgroundTint="@color/white"
-        android:fontFamily="serif"
         android:text="Register"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#2196F3"
