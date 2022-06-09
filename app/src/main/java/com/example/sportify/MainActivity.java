@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Fill all fields!", Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
-                    Toast.makeText(getApplicationContext(), "Username is already in use!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Username or email are already in use!", Toast.LENGTH_LONG).show();
                 }
 
                 }
