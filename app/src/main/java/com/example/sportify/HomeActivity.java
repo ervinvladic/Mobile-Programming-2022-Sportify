@@ -65,6 +65,11 @@ public class HomeActivity extends AppCompatActivity {
         intent.putExtra("user",str);
         startActivity(intent);
     }
+    public void onReservations(View view){
+        Intent intent = new Intent(this, ReservationsActivity.class);
+        intent.putExtra("user",str);
+        startActivity(intent);
+    }
 
 }
 

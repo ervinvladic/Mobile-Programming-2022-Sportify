@@ -41,6 +41,7 @@ public class PlaceDetails extends AppCompatActivity {
     private TextView location;
     private String name;
     private String str;
+    private Users user;
     int hour1,minute1;
     private static final String CHANNEL_ID ="channel" ;
     DatePickerDialog.OnDateSetListener setListener;
@@ -61,6 +62,7 @@ public class PlaceDetails extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         name=extras.getString(HomeActivity.EXTRA_TITLE);
         str=extras.getString("user");
+        user = SportifyDatabase.getInstance(this).userDao().loginUser(str);
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
             NotificationChannel channel= new NotificationChannel(CHANNEL_ID,"notification", NotificationManager.IMPORTANCE_HIGH);
             NotificationManager manager=getSystemService(NotificationManager.class);
@@ -92,6 +94,9 @@ public class PlaceDetails extends AppCompatActivity {
                 }
                 NotificationManagerCompat managerCompat=NotificationManagerCompat.from(PlaceDetails.this);
                 managerCompat.notify(0,builder.build());
+
+                Reservation reservation = new Reservation(user.getId(), court.getText().toString(),date.getText().toString(),time.getText().toString());
+                SportifyDatabase.getInstance(getApplicationContext()).reservationDao().addReservation(reservation);
 
                 startActivity(intent);
 
