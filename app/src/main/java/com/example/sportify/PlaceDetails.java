@@ -91,12 +91,12 @@ public class PlaceDetails extends AppCompatActivity {
                 }else{
                     builder.setContentTitle(name);
                     builder.setContentText("Your court reservation was successful. Enjoy your game!");
+                    Reservation reservation = new Reservation(user.getId(), court.getText().toString(),date.getText().toString(),time.getText().toString());
+                    SportifyDatabase.getInstance(getApplicationContext()).reservationDao().addReservation(reservation);
                 }
                 NotificationManagerCompat managerCompat=NotificationManagerCompat.from(PlaceDetails.this);
                 managerCompat.notify(0,builder.build());
 
-                Reservation reservation = new Reservation(user.getId(), court.getText().toString(),date.getText().toString(),time.getText().toString());
-                SportifyDatabase.getInstance(getApplicationContext()).reservationDao().addReservation(reservation);
 
                 startActivity(intent);
 
