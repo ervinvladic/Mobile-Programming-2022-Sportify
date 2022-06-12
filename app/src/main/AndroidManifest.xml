@@ -11,8 +11,7 @@
         android:theme="@style/Theme.Sportify">
         <activity
             android:name=".ReservationsActivity"
-            android:exported="false"
-            android:parentActivityName=".HomeActivity"/>
+            android:exported="false"/>
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -34,16 +33,13 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".ProfileActivity"
-            android:exported="false"
-            android:parentActivityName=".HomeActivity"/>
+            android:exported="false"/>
         <activity
             android:name=".PlaceDetails"
-            android:exported="false"
-            android:parentActivityName=".HomeActivity"/>
+            android:exported="false"/>
         <activity
             android:name=".HomeActivity"
-            android:exported="false"
-            android:launchMode="singleTask"/>
+            android:exported="false"/>
         <activity
             android:name=".LoginActivity"
             android:exported="true">

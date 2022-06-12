@@ -18,6 +18,7 @@ public class ProfileActivity extends AppCompatActivity {
     private EditText username;
     private EditText password;
     private EditText email;
+    private String oldstr;
 
 
     @Override
@@ -44,6 +45,7 @@ public class ProfileActivity extends AppCompatActivity {
             username.setText(user.getUsername());
             password.setText(user.getPassword());
             email.setText(user.getEmail());
+            oldstr = username.getText().toString();
         }
     }
     public void onSave(View view){
@@ -54,19 +56,24 @@ public class ProfileActivity extends AppCompatActivity {
             user.setPassword(password.getText().toString());
             user.setEmail(email.getText().toString());
             SportifyDatabase.getInstance(this).userDao().updateUser(user);
+            if(password.getText().toString().trim().length()<6) {
+                Toast.makeText(getApplicationContext(), "Password needs to have at least 6 characters!", Toast.LENGTH_SHORT).show();
+            }else{
 
             Toast.makeText(this, "User information updated!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, HomeActivity.class);
             intent.putExtra("user", username.getText().toString());
             startActivity(intent);
+            }
+
         }catch(Exception e){
-            Toast.makeText(getApplicationContext(), "Username is already in use!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Username or email is already in use!", Toast.LENGTH_LONG).show();
         }
 
     }
     public void onCancel(View view){
         Intent intent = new Intent(this, HomeActivity.class);
-        intent.putExtra("user",username.getText().toString());
+        intent.putExtra("user",oldstr);
         startActivity(intent);
     }
 
